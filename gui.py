@@ -20,15 +20,15 @@ login_layout = [input_info('Username', 'lab_username','user_login'),
 
 shop_layout = [[]]
 
-main_layout = [[col(login_layout, 'login'), col(shop_layout, 'shop')]]
+main_layout = [[sg.Column(login_layout, size=screen, key='login_frame'),
+                sg.Column(shop_layout, size=screen, key='shop_frame', visible=False)]]
 
 # ------------------------ Window definition ----------------------- #
 window = sg.Window('', main_layout, size=screen, font=my_font)
 
-# -------------------------- Main Method -------------------------- #
+# -------------------------- Main Method --------------------------- #
 if __name__ == '__main__':
     sys.dont_write_bytecode = True
-    window['login'].update(visible=True)
     while True:
         event, values = window.read()
         if event == None:
