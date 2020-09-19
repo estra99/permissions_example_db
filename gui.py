@@ -11,12 +11,9 @@ my_font = ('Arial', 14)
 def input_info(label, text_key, input_key, input_size=(45,1)):
     return [sg.Text(label, key=text_key), sg.Input(key=input_key, size=input_size)]
 
-def col(pLayout, pKey):
-    return sg.Column(pLayout, size=screen, key=pKey, visible=False)
-
 # ---------------------------- Layouts ----------------------------- #
 login_layout = [input_info('Username', 'lab_username','user_login'),
-                [sg.Text('Password', key='lab_password'), sg.Input(key='password_login', password_char='*'), sg.Button('Login', key='blogin')]]
+                [sg.Text('Password', key='lab_password'), sg.Input(key='password_login', password_char='*'), sg.Button('Login', key='login_button')]]
 
 shop_layout = [[]]
 
@@ -33,3 +30,5 @@ if __name__ == '__main__':
         event, values = window.read()
         if event == None:
             break
+        if event == 'login_button':
+            print("Login funciton is called here")
