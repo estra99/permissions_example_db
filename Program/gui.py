@@ -3,7 +3,7 @@ import sys
 
 # Setting sg variables
 sg.theme('light grey 6')
-screen = (500, 200)
+screen = (750, 200)
 my_font = ('Times', 16)
 
 
@@ -17,7 +17,7 @@ login_layout = [input_info('Username', 'lab_username', 'user_login'),
                 [sg.Text('Password', key='lab_password'), sg.Input(key='password_login', password_char='*'),
                  sg.Button('Login', key='login_button')]]
 
-shop_layout = [[]]
+shop_layout = [[sg.Button('Salvar', key = 'save_button')], [sg.Button('Eliminar', key = 'delete_button')], [sg.Button('Transacciones', key = 'transactions_button')]]
 
 main_layout = [[sg.Column(login_layout, size=screen, key='login_frame'),
                 sg.Column(shop_layout, size=screen, key='shop_frame', visible=False)]]
