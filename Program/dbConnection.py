@@ -8,6 +8,9 @@ def connect_db(server, db, userID):
     cursor = cnxn.cursor()
     return cursor
 
+def gcheck_permissions(email, password, server, db, userID):
+    return [-1]
+
 
 def encrypt_string(hash_string):
     sha_signature = hashlib.sha256(hash_string.encode()).hexdigest()
@@ -21,11 +24,18 @@ def check_permissions(email, password, server, db, userID):
     rows = cursor.fetchall()
     cursor.close()
     if len(rows) == 0:
-        return -1
+        return [-1]
     permissions = []
     for permission in rows:
         permissions.append(permission[1])
     return permissions
 
+def gcheck_permissions(email, password, server, db, userID):
+    return [1110, 1130, 1140]
 
-
+# cursor = gconnect_db('tcp:localhost,1433', 'quiz_dos')
+# cursor.execute("SELECT @@version;") 
+# row = cursor.fetchone() 
+# while row: 
+#     print(row[0])
+#     row = cursor.fetchone()
