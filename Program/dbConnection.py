@@ -21,11 +21,10 @@ def check_permissions(email, password, server, db, userID):
     rows = cursor.fetchall()
     cursor.close()
     if len(rows) == 0:
-        return -1
+        return [-1]
     permissions = []
     for permission in rows:
+        if permission[1] is None:
+            continue
         permissions.append(permission[1])
     return permissions
-
-
-
