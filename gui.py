@@ -8,8 +8,8 @@ import Program.dbConnection as db_conn
 # carlosrd@outlook.com /manzana99 /  admin y permisos por user
 # gcamposr@gmail.com /  piIs3.14 / personal
 # lsanchez@hotmail.com / soyTico9 / personal y permisos por user
-# Setting sg variables
 
+# Setting sg variables
 sg.theme('light grey 6')
 screen = (800, 200)
 my_font = ('Arial', 14)
@@ -30,7 +30,7 @@ login_layout = [input_info('Username', 'lab_username', 'user_login'),
                 [sg.Text('Password', key='lab_password'), sg.Input(key='password_login', password_char='*'),
                  sg.Button('Login', key='login_button')]]
 
-shop_layout = [[sg.Text('Nombre de sucursal', key='lab_shop_name'), sg.Text('Saldo: $', key='lab_balamce'),
+shop_layout = [[sg.Text('Sucursal: Ruinas, Cartago', key='lab_shop_name'), sg.Text('Saldo: $', key='lab_balamce'),
                 sg.Text('123456', key='lab_amount', visible=False)],
                [sg.Checkbox('Habilitada', key='cbox_enabled', visible=False)],
                [sg.Button('Salvar', key='btn_save', visible=False),
